@@ -150,6 +150,8 @@ class GlobalRouter : public ant::GlobalRouteSource
   void setCongestionIterations(int iterations);
   void setCongestionReportIterStep(int congestion_report_iter_step);
   void setCongestionReportFile(const char* file_name);
+  void reportCongestion();
+  int getOverflow(int layer = -1);
   void setGridOrigin(int x, int y);
   void setAllowCongestion(bool allow_congestion);
   void setMacroExtension(int macro_extension);
@@ -372,7 +374,6 @@ class GlobalRouter : public ant::GlobalRouteSource
   void printSegment(const GSegment& segment);
   void reportLayerSettings(int min_routing_layer, int max_routing_layer);
   void reportResources();
-  void reportCongestion();
   void updateEdgesUsage();
   void updateDbCongestionFromGuides();
   void computeGCellGridPatternFromGuides(
